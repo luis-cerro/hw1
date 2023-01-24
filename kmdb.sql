@@ -137,6 +137,84 @@ CREATE TABLE actors (
 -- Use hard-coded foreign key IDs when necessary
 -- TODO!
 
+INSERT INTO movies (
+    title,
+    year,
+    rating,
+    studio_id
+)
+VALUES (
+    "Batman Begins",
+    2005,
+    "PG-13",
+    1),
+    
+    ("The Dark Knight",
+    2008,
+    "PG-13",
+    1),
+    
+    ("The Dark Knight Rises",
+    2012,
+    "PG-13",
+    1
+);
+
+SELECT * FROM movies;
+
+INSERT INTO studios(
+    studio_name
+)
+VALUES(
+    "Warner Bros."
+);
+
+SELECT * FROM studios;
+
+INSERT INTO roles(
+    movie_id,
+    actor_id,
+    character_name
+)
+VALUES(
+    1, 1, "Bruce Wayne"),
+    (1, 2, "Alfred"),
+    (1, 3, "Ra's Al"),
+    (1, 4, "Rachel Dawes"),
+    (1, 5, "Commissioner Gordon"),
+    (2, 1, "Bruce Wayne"),
+    (2, 6, "Joker"),
+    (2, 7, "Harvey Dent"),
+    (2, 2, "Alfred"),
+    (2, 8, "Rachel Dawes"),
+    (3, 1, "Bruce Wayne"),
+    (3, 5, "Commissioner Gordon"),
+    (3, 9, "Bane"),
+    (3, 10, "John Blake"),
+    (3, 11, "Selina Kyle"
+);
+
+SELECT * FROM roles;
+
+INSERT INTO actors(
+    actor_name
+)
+VALUES(
+    "Christian Bale"),
+    ("Michael Caine"),
+    ("Liam Neeson"),
+    ("Katie Holmes"),
+    ("Gary Oldman"),
+    ("Heath Ledger"),
+    ("Aaron Eckhart"),
+    ("Maggie Gyllenhaal"),
+    ("Tom Hardy"),
+    ("Joseph Gordon-Levitt"),
+    ("Anne Hathaway"
+);
+
+SELECT * FROM actors;
+
 -- Prints a header for the movies output
 .print "Movies"
 .print "======"
@@ -144,6 +222,8 @@ CREATE TABLE actors (
 
 -- The SQL statement for the movies output
 -- TODO!
+
+
 
 -- Prints a header for the cast output
 .print ""
