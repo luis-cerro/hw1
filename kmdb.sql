@@ -160,16 +160,12 @@ VALUES (
     1
 );
 
-SELECT * FROM movies;
-
 INSERT INTO studios(
     studio_name
 )
 VALUES(
     "Warner Bros."
 );
-
-SELECT * FROM studios;
 
 INSERT INTO roles(
     movie_id,
@@ -194,8 +190,6 @@ VALUES(
     (3, 11, "Selina Kyle"
 );
 
-SELECT * FROM roles;
-
 INSERT INTO actors(
     actor_name
 )
@@ -213,8 +207,6 @@ VALUES(
     ("Anne Hathaway"
 );
 
-SELECT * FROM actors;
-
 -- Prints a header for the movies output
 .print "Movies"
 .print "======"
@@ -223,7 +215,9 @@ SELECT * FROM actors;
 -- The SQL statement for the movies output
 -- TODO!
 
-
+SELECT movies.title, movies.year, movies.rating, studios.studio_name
+FROM movies 
+INNER JOIN studios ON movies.studio_id=studios.id;
 
 -- Prints a header for the cast output
 .print ""
@@ -234,3 +228,8 @@ SELECT * FROM actors;
 
 -- The SQL statement for the cast output
 -- TODO!
+
+SELECT movies.title, actors.actor_name, roles.character_name
+FROM movies
+INNER JOIN roles ON movies.id=roles.movie_id
+INNER JOIN actors ON roles.actor_id=actors.id;
